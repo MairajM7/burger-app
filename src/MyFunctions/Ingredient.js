@@ -2,29 +2,30 @@ import React from "react";
 
 const Ingredient = ({
   title,
-  buttons,
   onIncrementIngredient,
   onDecrementIngredient,
   disabled,
+  moreButtonTitle,
+  lessButtonTitle,
 }) => {
   return (
     <div>
       {title}
-      {buttons.map((button, index) => {
-        return (
-          <button
-            key={index}
-            onClick={() => {
-              index === 0
-                ? onIncrementIngredient(title)
-                : onDecrementIngredient(title);
-            }}
-            disabled={index !== 0 ? disabled : false}
-          >
-            {button}
-          </button>
-        );
-      })}
+      <button
+        onClick={() => {
+          onIncrementIngredient(title);
+        }}
+      >
+        {moreButtonTitle}
+      </button>
+      <button
+        onClick={() => {
+          onDecrementIngredient(title);
+        }}
+        disabled={disabled}
+      >
+        {lessButtonTitle}
+      </button>
     </div>
   );
 };
