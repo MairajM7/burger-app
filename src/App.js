@@ -3,14 +3,12 @@ import React, { useState } from "react";
 import Ingredient from "./MyFunctions/Ingredient";
 
 const App = () => {
-  const initialIngredientDataItem = [
+  const ingredientDataItem = [
     { title: "Salad", salad: 20 },
     { title: "Bacon", bacon: 30 },
     { title: "Cheese", cheese: 40 },
     { title: "Meat", meat: 50 },
   ];
-
-  const [ingredientDataItem] = useState(initialIngredientDataItem);
 
   const [ingredients, setIngredients] = useState([]);
 
